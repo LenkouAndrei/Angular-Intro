@@ -1,0 +1,46 @@
+div.lead {
+	border-bottom: 2px solid darkgrey;
+}
+
+.navbar,
+.breadcrumb {
+	background: #FCF8E3;
+}
+
+img.img-thumbnail,
+.btn-outline-primary {
+	border-color: #20B2AA;
+}
+
+img.img-thumbnail {
+	height: 43px;
+}
+
+.navbar-brand span{
+	margin-left: 10px;
+	font-size: 40px;
+	line-height: 40px;
+	text-transform: capitalize;
+	font-stretch: condensed;
+	font-weight: 900;
+	background: radial-gradient(ellipse farthest-side at 20% 30%, #20B2AA 20%, #696969 80%);
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.breadcrumb-item.active,
+.btn-outline-primary {
+	color: #20B2AA;
+	text-transform: capitalize;
+}
+
+.btn-outline-primary:hover {
+	cursor: pointer;
+	background: rgba(0,0,0,0.2);
+	transition: 0.2s;
+}
+
+.breadcrumb {
+	margin: 0;
+	font-size: 30px;
+}

@@ -1,0 +1,33 @@
+.btn-primary {
+	background: #20B2AA;
+}
+
+.btn-primary {
+	position: relative;
+	background: #fcf8e3;
+	border-color: #fcf8e3;
+	color: darkgrey;
+}
+
+.btn-primary::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0;
+	border-radius: 0.25rem;
+	transition: 0.2s;
+}
+
+.btn-primary:hover {
+	cursor: pointer;
+	position: relative;
+}
+
+.btn-primary:hover:before {
+	opacity: 0.2;
+	transition: 0.2s;
+}

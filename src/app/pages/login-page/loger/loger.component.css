@@ -1,0 +1,12 @@
+.form-control-label,
+.btn-outline-primary {
+	border-color: #20B2AA;
+	color: #20B2AA;
+	text-transform: capitalize;
+}
+
+.btn-outline-primary:hover {
+	cursor: pointer;
+	background: rgba(0,0,0,0.2);
+	transition: 0.2s;
+}

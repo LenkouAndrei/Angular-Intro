@@ -1,0 +1,32 @@
+<div class="lead mark text-center">
+  <strong>{{ currentTitle }}</strong>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container">
+  	<div class="row justify-content-center align-items-center">
+  		<div class="col col-5">
+  		  <a class="navbar-brand d-flex align-items-center" href="#">
+	        <img [src]="logo.src" [alt]="logo.alt" class="img-thumbnail rounded float-left">
+	  	    <span class="logo-text">{{ logo.name }}</span>
+	  	  </a>
+  		</div>
+  		<div class="col-auto">
+	  		<ol 
+          aria-label="breadcrumb" 
+          class="breadcrumb d-flex align-items-center"
+          *ngIf="authorized">
+		      <li class="breadcrumb-item active" aria-current="page">Courses</li>
+		    </ol>
+  		</div>
+  		<div class="col col-5 d-flex align-items-end">
+  			<form 
+          class="ml-auto d-flex flex-column"
+          *ngIf="authorized">
+			    <input type="text" class="form-control text-center form-control-sm" [placeholder]="login.placeholder">
+  				<button type="button" class="btn btn-outline-primary btn-sm">logoff</button>
+			</form>	
+  		</div>
+  	</div>
+  </div><!-- /.container -->
+</nav>
+
