@@ -1,11 +1,12 @@
 <main>
-	<app-finder></app-finder>
+	<app-finder 
+		(onAddItem)="onAddItem($event)"></app-finder>
 	<div class="container">
 		<ul class="list">
 			<li class="list-item" 
-				*ngFor="let item of courseList; let index = index">
+				*ngFor="let item of courseList">
 				<app-item-list 
-					[item]="itemWithId(index)"
+					[item]="itemById(item.id)"
 					(onDeleteItem)="onDeleteItem($event)"
 				></app-item-list>
 			</li>

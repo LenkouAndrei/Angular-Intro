@@ -3,10 +3,31 @@
 		<div class="input-group mb-3 mt-3">
 		  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="search">
 		  <div class="input-group-append">
-		    <button class="btn btn-primary" type="button" (click)="consoleEnter()">Find</button>
+		    <button class="btn btn-primary" type="button">Find</button>
 		  </div>
 		</div>
 	</div>
-	<button type="button" class="btn btn-primary">Add course</button>
+	<button type="button" class="btn btn-primary" (click)="toggleCourseForm()">Add course</button>
+	<form [ngClass]="toggleFormClass()">
+	  <div class="form-group mt-3">
+	    <label for="formGroupExampleInput">ID</label>
+	    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID" [(ngModel)]="id" name="id">
+	  </div>
+	  <div class="form-group">
+	    <label for="formGroupExampleInput">Course Title</label>
+	    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Course Title" [(ngModel)]="title" name="title">
+	  </div>
+	  <div class="form-group">
+	    <label for="formGroupExampleInput2">Course Duration</label>
+	    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Course Duration" [(ngModel)]="duration" name="duration">
+	  </div>
+	  <div class="form-group">
+	        <label for="exampleFormControlTextarea1">Course Discription</label>
+    		<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="description" name="description"></textarea>
+	  </div>
+	  <div class="form-group mt-3 mb-3">
+	  	<button type="submit" class="btn btn-primary" (click)="addItem()">Submit</button>
+	  </div>
+	</form>
 </div>
 

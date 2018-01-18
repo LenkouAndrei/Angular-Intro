@@ -3,6 +3,10 @@
 	background: #20B2AA;
 }
 
+.container {
+	position: relative;
+}
+
 .btn-primary {
 	position: relative;
 	background: #fcf8e3;
@@ -41,4 +45,30 @@
 
 .form-control {
 	border: none;
+}
+
+.form-active,
+.form-disactive {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.form-active {
+	display: block;
+}
+
+.form-disactive {
+	display: none;
+}
+
+.form-add-course {
+	background: #20B2AA;
+	width: 100%;
+	z-index: 100;
+}
+
+.form-group {
+	width: 80%;
+	margin: 0 auto;
 }
