@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { NgClass } from '@angular/common';
 
-import { Item } from '../../../common/login.service';
+import { MainService, Item } from '../../../common/main.service';
 
 export interface FormClass {
 	'form-active': boolean,
@@ -23,6 +23,9 @@ export class FinderComponent {
   private duration: string | number;
   private description: string;
 
+  constructor(public mainService: MainService) {
+  }
+
   private toggleCourseForm(): void {
   	this.isformActive = !this.isformActive;
   }
@@ -30,20 +33,25 @@ export class FinderComponent {
   private toggleFormClass(): FormClass {
   	return {
   				'form-active': this.isformActive,
-				'form-disactive': !this.isformActive,
-				'form-add-course': true,
+  				'form-disactive': !this.isformActive,
+  				'form-add-course': true,
   			}
   }
 
-  private addItem(): Item {
+  private addItem(): void {
   	this.toggleCourseForm();
-  	const date = new Date().toString();
-  	return {
-			id: Number(this.id),
-			title: this.title, 
-			duration: this.duration.toString(), 
-			date,
-			description: this.description,
-  			}
+  	const currentDate = new Date();
+    const simpleNumberCurrentMonth = `${currentDate.getMonth() + 1}`;
+    const month = simpleNumberCurrentMonth.length < 2 ? `0${simpleNumberCurrentMonth}` : simpleNumberCurrentMonth;
+    const currentYearDoubleNumber = currentDate.getFullYear().toString().slice(-2);
+    const date = `${currentDate.getDate()}/${month}/${currentYearDoubleNumber}`;
+    const obj: Item = {
+          id: Number(this.id),
+          title: this.title, 
+          duration: this.duration.toString(), 
+          date,
+          description: this.description,
+        };
+  	this.mainService.createItem(obj);
   }
 }

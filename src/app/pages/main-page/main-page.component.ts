@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LoginService, Item } from '../../common/login.service';
+import { MainService, Item } from '../../common/main.service';
 
 @Component({
   selector: 'app-main-page',
@@ -10,7 +10,7 @@ import { LoginService, Item } from '../../common/login.service';
 export class MainPageComponent implements OnInit {
   private courseList: Item[];
 
-  constructor(public loginService: LoginService) {
+  constructor(public mainService: MainService) {
   }
 
   public ngOnInit() {
@@ -18,18 +18,18 @@ export class MainPageComponent implements OnInit {
   }
 
   public getList(): Item[] {
-  	return this.loginService.getList();
+  	return this.mainService.getList();
   }
 
   public itemById(id: number): Item {
-  	return this.loginService.getItemById(id);
+  	return this.mainService.getItemById(id);
   }
 
   private onDeleteItem(id:number): void {
-  	this.loginService.removeItem(id);
+  	this.mainService.removeItem(id);
   }
 
   private onAddItem(obj: Item): void {
-  	this.loginService.createItem(obj);
+  	this.mainService.createItem(obj);
   }
 }

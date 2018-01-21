@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CommonHeaderComponent } from './common/common-header/common-header.component';
 import { CommonFooterComponent } from './common/common-footer/common-footer.component';
 
-import { LoginService } from './common/login.service';
+import { MainService } from './common/main.service';
 
 import { LoginModule } from './pages/login-page/login.module';
 import { MainModule } from './pages/main-page/main.module';
@@ -24,7 +24,7 @@ import { MainModule } from './pages/main-page/main.module';
     LoginModule
   ],
   providers: [
-    LoginService
+    MainService
   ],
   bootstrap: [AppComponent]
 })
