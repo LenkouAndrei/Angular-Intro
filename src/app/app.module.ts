@@ -7,6 +7,7 @@ import { CommonHeaderComponent } from './common/common-header/common-header.comp
 import { CommonFooterComponent } from './common/common-footer/common-footer.component';
 
 import { MainService } from './common/main.service';
+import { AuthorizationService } from './common/authorization.service';
 
 import { LoginModule } from './pages/login-page/login.module';
 import { MainModule } from './pages/main-page/main.module';
@@ -24,7 +25,8 @@ import { MainModule } from './pages/main-page/main.module';
     LoginModule
   ],
   providers: [
-    MainService
+    MainService,
+    AuthorizationService
   ],
   bootstrap: [AppComponent]
 })

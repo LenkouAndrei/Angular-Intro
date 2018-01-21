@@ -14,16 +14,16 @@
 	  		<ol 
           aria-label="breadcrumb" 
           class="breadcrumb d-flex align-items-center"
-          *ngIf="authorized">
+          *ngIf="isAuthorized()">
 		      <li class="breadcrumb-item active" aria-current="page">Courses</li>
 		    </ol>
   		</div>
   		<div class="col col-5 d-flex align-items-end">
   			<form 
           class="ml-auto d-flex flex-column"
-          *ngIf="authorized">
+          *ngIf="isAuthorized()">
 			    <input type="text" class="form-control text-center form-control-sm" [placeholder]="login.placeholder">
-  				<button type="button" class="btn btn-outline-primary btn-sm">logoff</button>
+  				<button type="button" class="btn btn-outline-primary btn-sm" (click)="logOff()">logoff</button>
 			</form>	
   		</div>
   	</div>

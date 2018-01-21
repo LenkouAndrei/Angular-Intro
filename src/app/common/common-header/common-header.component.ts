@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthorizationService } from '../authorization.service';
 
 export interface Logo {
 	src: string,
@@ -24,6 +25,9 @@ export enum Title {
 })
 export class CommonHeaderComponent {
   private currentTitle: Title = Title.login;
+
+  constructor(private authorizationService: AuthorizationService) {}
+
   private logo: Logo = {
   	src: '../../../assets/logo.png',
   	alt: 'raccoon',
@@ -35,4 +39,10 @@ export class CommonHeaderComponent {
 	  placeholder: 'Racoon name',
   }
   private authorized: boolean = false;
+  private isAuthorized(): boolean {
+    return this.authorizationService.isAuthenticated();
+  }
+  private logOff(): void {
+    this.authorizationService.logOut('0');
+  }
 }
