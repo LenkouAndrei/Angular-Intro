@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 import { MainService, Item } from '../../common/main.service';
 
@@ -9,6 +9,7 @@ import { MainService, Item } from '../../common/main.service';
 })
 export class MainPageComponent implements OnInit {
   private courseList: Item[];
+  public message: string = 'No data. Fill free to add new course.';
 
   constructor(public mainService: MainService) {
   }
@@ -31,5 +32,9 @@ export class MainPageComponent implements OnInit {
 
   private onAddItem(obj: Item): void {
   	this.mainService.createItem(obj);
+  }
+
+  public isCourseListEmpty(): boolean {
+    return this.courseList.length ? false : true
   }
 }

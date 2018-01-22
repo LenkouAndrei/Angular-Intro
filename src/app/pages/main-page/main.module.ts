@@ -5,12 +5,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page.component';
 import { FinderComponent } from './finder/finder.component';
 import { ItemlistComponent } from './item-list/item-list.component';
+import { ActualCourseDirective } from '../../common/actual-course.directive';
+import { DurationPipe } from '../../common/duration.pipe';
+import { OrderByPipe } from '../../common/order-by.pipe';
 
 @NgModule({
   declarations: [
     MainPageComponent,
     FinderComponent,
-    ItemlistComponent
+    ItemlistComponent,
+    ActualCourseDirective,
+    DurationPipe,
+    OrderByPipe
   ],
   imports: [
     CommonModule,
@@ -19,7 +25,10 @@ import { ItemlistComponent } from './item-list/item-list.component';
   exports: [
     MainPageComponent,
     FinderComponent,
-    ItemlistComponent
+    ItemlistComponent,
+    ActualCourseDirective,
+    DurationPipe,
+    OrderByPipe
   ]
 })
 export class MainModule { }

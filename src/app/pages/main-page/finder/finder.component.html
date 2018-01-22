@@ -3,7 +3,7 @@
 		<div class="input-group mb-3 mt-3">
 		  <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="search">
 		  <div class="input-group-append">
-		    <button class="btn btn-primary" type="button">Find</button>
+		    <button class="btn btn-primary" type="button" (click)="find(search)">Find</button>
 		  </div>
 		</div>
 	</div>
@@ -20,6 +20,10 @@
 	  <div class="form-group">
 	    <label for="formGroupExampleInput2">Course Duration</label>
 	    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Course Duration" [(ngModel)]="duration" name="duration">
+	  </div>
+	  <div class="form-group">
+	    <label for="formGroupExampleInput2">Course Date</label>
+	    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Course Date" [(ngModel)]="date" name="date">
 	  </div>
 	  <div class="form-group">
 	        <label for="exampleFormControlTextarea1">Course Discription</label>

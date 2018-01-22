@@ -11,12 +11,15 @@ import { AuthorizationService } from './common/authorization.service';
 
 import { LoginModule } from './pages/login-page/login.module';
 import { MainModule } from './pages/main-page/main.module';
+import { FilterByNamePipe } from './common/filter-by-name.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CommonHeaderComponent,
-    CommonFooterComponent
+    CommonFooterComponent,
+    FilterByNamePipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { MainModule } from './pages/main-page/main.module';
   ],
   providers: [
     MainService,
-    AuthorizationService
+    AuthorizationService,
+    FilterByNamePipe
   ],
   bootstrap: [AppComponent]
 })

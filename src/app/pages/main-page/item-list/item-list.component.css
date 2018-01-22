@@ -31,3 +31,25 @@
 	opacity: 0.2;
 	transition: 0.2s;
 }
+
+.media {
+	padding: 10px;
+}
+
+.media-body p {
+	max-width: 940px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.top-rated {
+	background: #20B2AA;
+}
+
+.star {
+	margin-left: 5px;
+}
+
+.star polygon {
+	fill: #fcf8e3;
+}
