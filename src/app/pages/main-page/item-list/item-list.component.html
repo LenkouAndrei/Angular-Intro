@@ -1,4 +1,5 @@
-<div class="media"
+<div *ngIf="item">
+	<div class="media"
 	 [class.top-rated]="topRated"
 	 [appActualCourse]="item.date">
 	<div class="media-body">
@@ -21,4 +22,5 @@
 		<button class="btn btn-primary mt-3" type="button">Edit course</button>
 		<button class="btn btn-primary mt-3" type="button" (click)="deleteItem(id)">Delete</button>
 	</div>
+</div>
 </div>
