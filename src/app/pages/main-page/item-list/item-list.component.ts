@@ -1,17 +1,17 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 import { Item } from '../../../common/main.service';
 
 @Component({
   selector: 'app-item-list',
   templateUrl: './item-list.component.html',
-  styleUrls: ['./item-list.component.css']
+  styleUrls: ['./item-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemlistComponent implements OnInit {
   @Input() public item: Item;
   @Output() public onDeleteItem: EventEmitter<number> = new EventEmitter<number>();
 
-  public d = '16/02/2017';
   private fullCourseNameString: string;
   private duration: string;
   private date: string;
