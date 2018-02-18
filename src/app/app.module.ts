@@ -12,6 +12,8 @@ import { AuthorizationService } from './common/authorization.service';
 import { LoginModule } from './pages/login-page/login.module';
 import { MainModule } from './pages/main-page/main.module';
 import { FilterByNamePipe } from './common/filter-by-name.pipe';
+import { DurationPipe } from './common/duration.pipe';
+import { EditPageModule } from './pages/edit-page/edit-page.module';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import { FilterByNamePipe } from './common/filter-by-name.pipe';
     BrowserModule,
     FormsModule,
     MainModule,
-    LoginModule
+    LoginModule,
+    EditPageModule
   ],
   providers: [
     MainService,
     AuthorizationService,
-    FilterByNamePipe
+    FilterByNamePipe,
+    DurationPipe
   ],
   bootstrap: [AppComponent]
 })

@@ -13,7 +13,6 @@ export class OrderByPipe implements PipeTransform {
 	    	return Date.parse(a.date) - Date.parse(b.date)
 	    });
   	} else {
-  		console.log(allCourses);
   		return allCourses;
   	}
   }

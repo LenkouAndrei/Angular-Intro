@@ -17,7 +17,8 @@ export class LogerComponent {
 		if (this.login.length !== 0 && this.password.toString().length !== 0) {
 			const userData: LoginData = {login: this.login, password: this.password};
 			
-			this.authorizationService.login(userData);	
+			this.authorizationService.login(userData);
+			
 			this.login = '';	
 			this.password = '';	
 		}

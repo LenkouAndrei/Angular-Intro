@@ -8,22 +8,38 @@ import { MainService, Item } from '../../common/main.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  private courseList: Item[];
+  private courseList: Item[] = [];
   public message: string = 'No data. Fill free to add new course.';
 
   constructor(public mainService: MainService) {
   }
 
   public ngOnInit() {
-  	this.courseList = this.getList();
+  	this.getList();
   }
 
-  public getList(): Item[] {
-  	return this.mainService.getList();
+  public getList(): void {
+  	this.mainService.getList()
+      .subscribe(
+        courseListItems => this.courseList.push(courseListItems),
+        err => console.log(err),
+        () => console.log('done')
+      )
+      .unsubscribe();
   }
 
   public itemById(id: number): Item {
-  	return this.mainService.getItemById(id);
+    let item: Item;
+    this.mainService.getItemById(id)
+  	  .subscribe(
+        courseListItems => {
+          item = courseListItems;
+          return courseListItems;
+        },
+        err => console.log(err),
+        () => console.log('done')
+      );
+      return item;
   }
 
   private onDeleteItem(id:number): void {
@@ -31,7 +47,8 @@ export class MainPageComponent implements OnInit {
   }
 
   private onAddItem(obj: Item): void {
-  	this.mainService.createItem(obj);
+  	this.courseList = this.mainService.createItem(obj);
+    console.log(this.courseList);
   }
 
   public isCourseListEmpty(): boolean {
